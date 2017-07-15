@@ -147,6 +147,15 @@ ${process.platform} ${process.arch} ${os.release()}`;
 	}
 ];
 
+const experimentSubmenu = [
+	{
+		label: `Theme`,
+		click() {
+			shell.openExternal('https://electron.atom.io/docs/');
+		}
+	}
+];
+
 const darwinTpl = [
 
 	{
@@ -398,7 +407,11 @@ const otherTpl = [
 	{
 		role: 'help',
 		submenu: helpSubmenu
-	}
+	},
+	{
+		label: 'Experiment',
+		submenu: experimentSubmenu
+	},
 ];
 
 const tpl = process.platform === 'darwin' ? darwinTpl : otherTpl;
